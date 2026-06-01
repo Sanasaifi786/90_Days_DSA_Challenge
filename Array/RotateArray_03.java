@@ -11,7 +11,7 @@ public class RotateArray_03 {
         }
         int k = sc.nextInt();
         int result[] = new int[n];
-        for(int i=n-; i>=0; i--)
+        for(int i=n-1; i>=0; i--)
         {
             int val = (i+k)%n;
             result[val] = nums[i];
