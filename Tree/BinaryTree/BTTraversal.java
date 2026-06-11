@@ -19,6 +19,16 @@ public class BTTraversal {
         preorder(root.left);
         preorder(root.right);
     }
+    public static void inorder(Node root)
+    {
+        if(root==null)
+        {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data+" ");
+        inorder(root.right);
+    }
     public static void main(String[] args) {
         //Problem name = Traversal of Binary tree
         Node root = new BTTraversal().new Node(1);
@@ -31,5 +41,11 @@ public class BTTraversal {
 
         System.out.println("Preorder Traversal:");
         preorder(root);
+        System.out.println();
+        System.out.println("Inorder Traversal:");
+        inorder(root);
+        System.out.println();
+        System.out.println("Postorder Traversal:");
+        postorder(root);
     }
 }
