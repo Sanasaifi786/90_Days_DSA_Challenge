@@ -1,3 +1,4 @@
+import java.util.*
 public class BTTraversal {
     class Node{
         int data;
@@ -39,6 +40,28 @@ public class BTTraversal {
         postorder(root.right);
         System.out.print(root.data+" ");
     }
+    public static void levelOrder(Node root)
+    {
+        if(root==null)
+        {
+            return;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty())
+        {
+            Node curr = q.remove();
+            System.out.print(curr.data+" ");
+            if(curr.left!=null)
+            {
+                q.add(curr.left);
+            }
+            if(curr.right!=null)
+            {
+                q.add(curr.right);
+            }
+        }
+    }
     public static void main(String[] args) {
         //Problem name = Traversal of Binary tree
         Node root = new BTTraversal().new Node(1);
@@ -58,5 +81,7 @@ public class BTTraversal {
         System.out.println("Postorder Traversal:");
         postorder(root);
         System.out.println();
+        System.out.println("Level order Traversal:");
+        levelOrder(root);
     }
 }
