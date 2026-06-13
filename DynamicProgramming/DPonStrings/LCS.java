@@ -28,16 +28,17 @@ public class LCS {
         }
         if(s1.charAt(n-1)==s2.charAt(m-1))
         {
-            dp[n][m] =  1+lcs(s1,s2,n-1,m-1);
+            dp[n][m] =  1+lcsDP(s1,s2,n-1,m-1,dp);
             return dp[n][m];
         }
         else{
-            int left = lcs(s1,s2,n-1,m);
-            int right = lcs(s1,s2,n,m-1);
+            int left = lcsDP(s1,s2,n-1,m,dp);
+            int right = lcsDP(s1,s2,n,m-1,dp);
             dp[n][m] = Math.max(left,right);
             return dp[n][m];
         }
     }
+    
     public static void main(String[] args)
     {
         //problem name - Longest comman Subquence
