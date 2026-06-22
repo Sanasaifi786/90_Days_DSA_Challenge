@@ -3,6 +3,6 @@ public class printLIS {
     {
         int arr[] = {1,3,5,4,7};
         int dp[] = new int[arr.length];
-        int trace[] = new int
+        int trace[] = new int[arr.length];
     }
 }
