@@ -16,6 +16,19 @@ public class delete_03 {
         head = head.next;
         return head;
     }
+    public static Node deleteAtEnd(Node head)
+    {
+        if(head==null)
+        {
+            return null;
+        }
+        while(head.next.next!=null)
+        {
+            head = head.next;
+        }
+        head.next = null;
+        return head;
+    }
     public static void main(String[] args) {
         //problem name - deletion in linked list
         Node head = new Node(1);
@@ -25,7 +38,8 @@ public class delete_03 {
         head.next.next.next.next = new Node(5);
 
         // delete from the starting
-        Node newHead = deleteAtStart(head);
+        // Node newHead = deleteAtStart(head);
+        Node newHead = deleteAtEnd(head);
         while(newHead!=null)
         {
             System.out.println(newHead.data);
