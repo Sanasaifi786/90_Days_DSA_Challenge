@@ -5,8 +5,13 @@ import java.util.Queue;
 
 public class courseSchedule1 {
     public static void main(String[] args) {
+        // Problem name = Course Schedule1
+        // int prerequisites[][] = {
+        //     {0,1}
+        // };
         int prerequisites[][] = {
-            {0,1}
+            {0,1},
+            {1,0}
         };
         int numCourses = 2;
         if(prerequisites.length==0)
