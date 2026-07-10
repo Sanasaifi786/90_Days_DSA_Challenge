@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class courseSchedule1 {
     public static void main(String[] args) {
-        // Problem name = Course Schedule1
+        // Problem name - 207. Course Schedule
         // int prerequisites[][] = {
         //     {0,1}
         // };
