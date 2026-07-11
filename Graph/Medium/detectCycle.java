@@ -20,25 +20,33 @@ public class detectCycle {
     }
     public static void main(String[] args)
     {
+        // int graph[][] = {
+        //     {2,3},
+        //     {1,5},
+        //     {1,4,6},
+        //     {3},
+        //     {2,7},
+        //     {3,7},
+        //     {5,6}
+        // };
         int graph[][] = {
-            {2,3},
-            {1,5},
-            {1,4,6},
-            {3},
-            {2,7},
-            {3,7},
-            {5,6}
+            {0,1},
+            {0,2},
+            {1,2},
+            {3,4}
         };
-        int n = graph.length;
+        int n = 6;
         boolean vis[] = new boolean[n];
+        int count = 0;
         for(int i=0; i<n; i++)
         {
             if(!vis[i])
             {
                 if(dfs(graph,i,vis,-1))
                 {
-                    System.out.println("Cycle is present");
-                    return;
+                    count++;
+                    System.out.println("Cycle is present"+count);
+                    // return;
                 }
             }
         }
