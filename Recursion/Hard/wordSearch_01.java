@@ -61,7 +61,7 @@ public class wordSearch_01 {
     }
     public static void main(String[] args)
     {
-        // problem name - Word Search
+        // problem name - Word Search  
 
         char[][] board = {
             {'A','B','C','E'},
