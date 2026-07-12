@@ -37,16 +37,14 @@ public class detectCycle {
         };
         int n = 6;
         boolean vis[] = new boolean[n];
-        int count = 0;
         for(int i=0; i<n; i++)
         {
             if(!vis[i])
             {
                 if(dfs(graph,i,vis,-1))
                 {
-                    count++;
-                    System.out.println("Cycle is present"+count);
-                    // return;
+                    System.out.println("Cycle is present");
+                    return;
                 }
             }
         }
