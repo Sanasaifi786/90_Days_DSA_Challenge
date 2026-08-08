@@ -29,9 +29,34 @@ public class LCSubstring {
         int dp[][] = new int[s1.length()+1][s2.length()+1];
         for(int i[]: dp)
         {
-            Arrays.fill(i, -1);
+            Arrays.fill(i, 0);
         }
-        int ans = LCS(s1,s2,s1.length(),s2.length(),dp);
+        // int ans = LCS(s1,s2,s1.length(),s2.length(),dp);
+        int ans  = 0;
+        for(int i=1; i<s1.length()+1; i++)
+        {
+            for(int j=1; j<s2.length()+1; j++)
+            {
+                if(s1.charAt(i-1)==s2.charAt(j-1))
+                {
+                    dp[i][j] = 1+dp[i-1][j-1];
+                    ans = Math.max(ans,dp[i][j]);
+                }
+                else{
+                    dp[i][j]=0;
+                }
+            }
+        }
+
+        //printing dp table
+        for(int i=0; i<s1.length()+1; i++)
+        {
+            for(int j=0; j<s2.length()+1; j++)
+            {
+                System.out.print(dp[i][j]+" ");
+            }
+            System.out.println();
+        }
         System.out.println(ans);
     }
 }
